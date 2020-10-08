@@ -8,8 +8,9 @@ import { DATA } from '../data';
 
 export const MainScreen = ({ navigation }) => {
 
-  const onOpen = recipe => {
-    navigation.navigate('Recipe', { recipe } ) 
+  const onOpen = figure => {
+    //console.log(figure)
+    navigation.navigate('Figure', figure ) 
   }
 
   useEffect(()=>{
@@ -18,24 +19,14 @@ export const MainScreen = ({ navigation }) => {
     });
   }, [])
   
-  {/*if (!recipes.length) {
-    return (
-      <View style={styles.loader}>
-        <Image 
-          resizeMode='center'
-          source={require('../../assets/emptylist.jpg')}
-        />
-      </View>
-    )
-  }*/}
-
-
+  
   return (
     <View style={styles.wrapper}>
       <FlatList
-        data={recipes}
-        keyExtractor={recipe => recipe.id.toString()}
-        renderItem={() => <MainScreenItem onOpen={onOpen} />}
+        data={DATA}
+        keyExtractor={item => item.id.toString()}
+        renderItem={({item}) => <MainScreenItem figure={item} onOpen={onOpen} />}
+        numColumns={2}
       /> 
     </View>
   )
@@ -44,12 +35,11 @@ export const MainScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   wrapper: {
     //padding: 10,
-    marginBottom: 10
+    marginBottom: 10,
   },
   loader: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff'
   }
 })

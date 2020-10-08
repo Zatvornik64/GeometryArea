@@ -5,9 +5,7 @@ import { THEME } from '../theme';
 
 import { MainScreen } from '../screens/MainScreen';
 import { AboutScreen } from '../screens/AboutScreen';
-import { Figure1Screen } from '../screens/Figure1';
-import { Figure2Screen } from '../screens/Figure2';
-import { Figure3Screen } from '../screens/Figure3';
+import { FigureScreen }  from '../screens/FigureScreen';
 
 
 const Stack = createStackNavigator()
@@ -38,33 +36,14 @@ function RootStack() {
         },  }}
       />
       <Stack.Screen
-        name="Figure1"
-        component={Figure1Screen}
+        name="Figure"
+        component={FigureScreen}
         options={{ 
-          title: 'Площадь квадрата',
+          title: 'Расчет',
           headerStyle: {
             backgroundColor: THEME.HEADER_BACKGROUND
         },  }}
       />
-      <Stack.Screen
-        name="Figure2"
-        component={Figure2Screen}
-        options={{ 
-          title: 'Площадь прямоугольника',
-          headerStyle: {
-            backgroundColor: THEME.HEADER_BACKGROUND
-        },  }}
-      />
-      <Stack.Screen
-        name="Figure3"
-        component={Figure3Screen}
-        options={{ 
-          title: 'Площадь круга',
-          headerStyle: {
-            backgroundColor: THEME.HEADER_BACKGROUND
-        },  }}
-      />
-      
     </Stack.Navigator>
   );
 }

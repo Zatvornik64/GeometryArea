@@ -1,17 +1,13 @@
 import React from 'react'
 import { View, StyleSheet, ImageBackground, Text, TouchableOpacity } from 'react-native'
 
-export const MainScreenItem = ({ onOpen }) => {
+export const MainScreenItem = ({ figure, onOpen }) => {
+  
   return (
     <View style={styles.wrapper}>
-      <TouchableOpacity activeOpacity={0.7} onPress={() => onOpen(recipe)}> 
-      <ImageBackground style={styles.image} source={recipe.img ? { uri: recipe.img } : require('../../assets/noimage.png')}>
-        <View style={styles.textWrap}>
-          <Text style={styles.title}>
-            {recipe.title}
-          </Text>
-        </View>
-      </ImageBackground>
+      <TouchableOpacity activeOpacity={0.7} onPress={() => onOpen(figure)}> 
+        <ImageBackground style={styles.image} source={figure.img ? figure.img : require('../../assets/noimage.png')}>
+        </ImageBackground>
       </TouchableOpacity>
     </View>
   )
@@ -20,19 +16,11 @@ export const MainScreenItem = ({ onOpen }) => {
 const styles = StyleSheet.create({
   wrapper: {
     marginBottom: 15,
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   image: {
-    width: '100%',
-    height: 200
+    borderWidth: 0,
+    width: 200,
+    height: 150
   },
-  textWrap: {
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    paddingVertical: 5,
-    alignItems: 'center',
-    width: '100%'
-  },
-  title: {
-    color: '#fff',
-  }
 })
