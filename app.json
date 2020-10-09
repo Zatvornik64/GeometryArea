@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "GeometryArea",
+    "name": "Площади фигур",
     "slug": "GeometryArea",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -16,14 +16,12 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true
-    },
+    "android": {
+      "package": "com.github.Zatvornik64.GeometryArea",
+      "versionCode": 1
+    },  
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "android": {
-      "package": "com.mikeposhivalov.GeometryArea"
     }
   }
 }
