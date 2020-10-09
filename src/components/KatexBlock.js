@@ -14,7 +14,7 @@ html, body {
   background-color: #eee;
   justify-content: center;
   align-items: center;
-  height: 6rem;
+  height: 7rem;
   margin: 0;
   padding: 0;
 }
@@ -30,7 +30,7 @@ export function KatexBlock( {formulaTitle} ) {
   return (
       <Katex
           expression={formulaTitle}
-          //style={styles.katex}
+          style={{backgroundColor: '#eee'}}
           inlineStyle={inlineStyle}
           displayMode={false}
           throwOnError={false}
