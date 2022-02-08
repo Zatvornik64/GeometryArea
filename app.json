@@ -18,7 +18,11 @@
     ],
     "android": {
       "package": "com.github.Zatvornik64.GeometryArea",
-      "versionCode": 1
+      "versionCode": 1,
+      "adaptiveIcon": { 
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#87CEFA" 
+      }
     },  
     "web": {
       "favicon": "./assets/favicon.png"
